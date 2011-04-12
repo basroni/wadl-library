@@ -58,6 +58,7 @@
                     <representation>
                         <apigee:payload><![CDATA[
 {
+"createAccountKey" : "XXX",
 "emailAddress" : "abc@test.com" ,
 "routingNumber" : "12345678" ,
 "bankAccountType" : "CHECKING",
@@ -88,16 +89,17 @@ PayPal accounts.]]></doc>
                     <representation>
                         <apigee:payload><![CDATA[
 {
-"cardNumber" : "XXX",
+"cardNumber" : "4577644256134768",
 "cardType" : "Visa",
 "cardVerificationNumber" : "123",
 "confirmationType" : "NONE",
 "createAccountKey" : "XXX",
-"emailAddress" : "abc@test.com"
-"expirationDate" : "",
-"nameOnCard" : " ",
+"emailAddress" : "testing3@mypaypal.com",
+"expirationDate" : {"month" : "05" , "year" : "2012"},
+"billingAddress" : {"line1": "1968 Ape Way","line2" : "Apt 123","city" : "Austin","state" : "TX" ,"postalCode" : "78750" , "countryCode" : "US" } ,
+"nameOnCard" : {"firstName" : "John" , "lastName" : "Smith" },
 "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
-}                       
+}  
 ]]></apigee:payload>
                     </representation>
                 </request>
@@ -145,6 +147,7 @@ funding sources for PayPal accounts.
                     <representation>
                         <apigee:payload><![CDATA[
 {
+"matchCriteria" : "name",
 "emailAddress" : "abc@test.com",
 "firstName" : "XYZ",
 "lastName" : "XYZ",
@@ -163,7 +166,7 @@ funding sources for PayPal accounts.
                     <apigee:tag>GetUserAgreement</apigee:tag>
                 </apigee:tags>
                 <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
-                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/AdaptiveAccounts/GetVerifiedStatus"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/AdaptiveAccounts/GetUserAgreement"/>
                 <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
                      apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[The GetUserAgreement method lets you retrieve the user agreement for the customer to
 approve the new PayPal account.
