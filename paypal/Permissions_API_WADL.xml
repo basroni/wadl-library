@@ -21,7 +21,7 @@
                         <apigee:payload><![CDATA[
 {
 "scope" : "EXPRESS_CHECKOUT",
-"calback" : "http://your_return_url",
+"callback" : "http://your_return_url",
 "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 ]]></apigee:payload>
