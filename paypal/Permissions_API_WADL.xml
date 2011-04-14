@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:apigee="http://api.apigee.com/wadl/2010/07/" xmlns="http://wadl.dev.java.net/2009/02"
+             xsi:schemaLocation="http://wadl.dev.java.net/2009/02 http://apigee.com/schemas/wadl-schema.xsd http://api.apigee.com/wadl/2010/07/ http://apigee.com/schemas/apigee-wadl-extensions.xsd">
+
+    <resources base="https://svcs.paypal.com/Permissions/>
+    
+        <resource path="RequestPermissions">
+            <method id="Pay" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Permissions</apigee:tag>
+                    <apigee:tag>RequestPermissions</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Permissions/RequestPermissions"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Request Permissions
+]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+{
+"scope" : "EXPRESS_CHECKOUT",
+"calback" : "http://your_return_url",
+"requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+}
+]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>
+        
+        <resource path="GetAccessToken">
+            <method id="Pay" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Permissions</apigee:tag>
+                    <apigee:tag>GetAccessToken</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Permissions/GetAccessToken"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Get Access token
+]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+{
+"token" : "XXX",
+"verifier" : "XXX",
+"requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+}
+]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>        
+       
+        <resource path="GetPermissions">
+            <method id="Pay" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Permissions</apigee:tag>
+                    <apigee:tag>GetPermissions</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Permissions/GetPermissions"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Get Access token
+]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+{
+"token" : "XXX",
+"requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+}
+]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>        
+
+        <resource path="CancelPermissions">
+            <method id="Pay" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Permissions</apigee:tag>
+                    <apigee:tag>CancelPermissions</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Permissions/CancelPermissions"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Cancel Permissions
+]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+{
+"token" : "XXX",
+"requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+}
+]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>        
+        
+    </resources>
+</application>
