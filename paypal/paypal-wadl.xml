@@ -467,6 +467,7 @@ approve the new PayPal account.
 					<representation>
 						<apigee:payload><![CDATA[
 {
+"languageCode" : "en_US",
 "countryCode" : "US",
 "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }						
