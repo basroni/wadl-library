@@ -321,6 +321,7 @@
 				<doc title="" apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Creates PayPal accounts
 ]]></doc>
 				<request>
+					<param name="X-PAYPAL-SANDBOX-EMAIL-ADDRESS" type="string" style="header" required="true" default="abc@test.com"/>
 					<representation>
 						<apigee:payload><![CDATA[
 {
@@ -414,7 +415,7 @@ PayPal accounts.]]></doc>
 				<doc title="" apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[The SetFundingSourceConfirmed method lets your application set up bank accounts as
 funding sources for PayPal accounts.
 ]]></doc>
-				<request>
+				<request>					
 					<representation>
 						<apigee:payload><![CDATA[
 {
