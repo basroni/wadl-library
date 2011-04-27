@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:apigee="http://api.apigee.com/wadl/2010/07/"
+	xmlns="http://wadl.dev.java.net/2009/02"
+	xsi:schemaLocation="http://wadl.dev.java.net/2009/02 http://apigee.com/schemas/wadl-schema.xsd http://api.apigee.com/wadl/2010/07/ http://apigee.com/schemas/apigee-wadl-extensions.xsd">
+
+	<resources base="https://api-3t.sandbox.paypal.com/nvp">
+		<resource>
+			<!-- <param name="format" type="xsd:string" style="template" required="false" 
+				default="json"> <option value="json" mediaType="application/json"/> </param> -->
+			<method id="SetExpressCheckout" name="POST" apigee:displayName="SetExpressCheckout">
+				<apigee:tags>
+					<apigee:tag primary="true">Express Checkout</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example/>
+				<doc title="" apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Express Checkout Payment flow]]></doc>
+				<request>
+					<representation>
+						<apigee:payload><![CDATA[USER=devz_1299018449_biz_api1.yahoo.com&PWD=1299018457&SIGNATURE=AOjg8whuGwKAwWAjygkG3niq1Jr8Akkrd0NjQLbIz4ThW6DRnU.KjGcl&VERSION=56.0&METHOD=SetExpressCheckout&RETURNURL=http://www.x.com&CANCELURL=http://www.x.com&AMT=1&PAYMENTACTION=SALE&CURRENCYCODE=USD]]></apigee:payload>
+					</representation>
+				</request>
+			</method>
+		</resource>
+	</resources>
+		
+	<resources base="https://api-3t.sandbox.paypal.com/nvp">
+		<resource>
+			<!-- <param name="format" type="xsd:string" style="template" required="false" 
+				default="json"> <option value="json" mediaType="application/json"/> </param> -->
+			<method id="GetExpressCheckoutDetails" name="POST" apigee:displayName="GetExpressCheckoutDetails">
+				<apigee:tags>
+					<apigee:tag primary="true">Express Checkout</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example/>
+				<doc title="" apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Express Checkout Payment flow]]></doc>
+				<request>
+					<representation>						<apigee:payload><![CDATA[USER=devz_1299018449_biz_api1.yahoo.com&PWD=1299018457&SIGNATURE=AOjg8whuGwKAwWAjygkG3niq1Jr8Akkrd0NjQLbIz4ThW6DRnU.KjGcl&VERSION=56.0&METHOD=GetExpressCheckoutDetails&TOKEN=EC-9SN70577A6651644Y]]></apigee:payload>
+					</representation>
+				</request>
+			</method>
+		</resource>
+	</resources>	
+	
+	<resources base="https://api-3t.sandbox.paypal.com/nvp">
+		<resource>
+			<!-- <param name="format" type="xsd:string" style="template" required="false" 
+				default="json"> <option value="json" mediaType="application/json"/> </param> -->
+			<method id="DoExpressCheckoutPayment" name="POST" apigee:displayName="DoExpressCheckoutPayment">
+				<apigee:tags>
+					<apigee:tag primary="true">Express Checkout</apigee:tag>
+				</apigee:tags>
+				<apigee:authentication required="true" />
+				<apigee:example/>
+				<doc title="" apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Express Checkout Payment flow]]></doc>
+				<request>
+					<representation>						<apigee:payload><![CDATA[USER=devz_1299018449_biz_api1.yahoo.com&PWD=1299018457&SIGNATURE=AOjg8whuGwKAwWAjygkG3niq1Jr8Akkrd0NjQLbIz4ThW6DRnU.KjGcl&VERSION=56.0&METHOD=DoExpressCheckoutPayment&TOKEN=EC-9SN70577A6651644Y&PAYERID=test@abc.com&AMT=1&PAYMENTACTION=SALE&CURRENCYCODE=USD]]></apigee:payload>
+					</representation>
+				</request>
+			</method>
+		</resource>
+	</resources>	
+
+</application>
+
+
