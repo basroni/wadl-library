@@ -21,14 +21,12 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
-  "actionType" : "PAY",
-  "currencyCode" : "USD",
-  "receiverList" : {
-                     "receiver":[{"amount":"1.00","email":"seller_1288085303_biz@gmail.com"}]
-                   },
-  "returnUrl" : "http://apigee.com/console/-1/handlePaypalReturn",
-  "cancelUrl" : "http://apigee.com/console/-1/handlePaypalCancel?",
-  "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+  "actionType":"PAY",
+  "currencyCode":"USD",
+  "receiverList":{"receiver":[{"amount":"1.00","email":"seller_1288085303_biz@gmail.com"}]},
+  "returnUrl":"http://apigee.com/console/-1/handlePaypalReturn",
+  "cancelUrl":"http://apigee.com/console/-1/handlePaypalCancel?",
+  "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
                  ]]></apigee:payload>
 					</representation>
@@ -50,8 +48,8 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
- "payKey" : "AP-9JK61721EP167721B",
- "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+ "payKey":"AP-9JK61721EP167721B",
+ "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 				]]></apigee:payload>
 					</representation>
@@ -73,28 +71,25 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
- "senderEmail" : "buyer_1288085239_per@gmail.com",
- "startingDate" : "2011-01-21",
- "endingDate" : "2011-10-21",
- "maxAmountPerPayment" : "1.00",
- "maxNumberOfPayments" : "10",
- "maxTotalAmountOfAllPayments" : "50.00",
-
- "currencyCode" : "USD",
- "dayOfWeek" : "SUNDAY",
- "paymentPeriod" : "WEEKLY",
- "memo"	: "Setting the preapproval for this month",
- "pinType" : "NOT_REQUIRED",
-
- "returnUrl" :"http://app.apigee.com/handle_paypal_return.html",
- "cancelUrl" :"http://app.apigee.com/handle_paypal_cancel.html",
+ "senderEmail":"buyer_1288085239_per@gmail.com",
+ "startingDate":"2011-01-21",
+ "endingDate":"2011-10-21",
+ "maxAmountPerPayment":"1.00",
+ "maxNumberOfPayments":"10",
+ "maxTotalAmountOfAllPayments":"50.00",
+ "currencyCode":"USD",
+ "dayOfWeek":"SUNDAY",
+ "paymentPeriod":"WEEKLY",
+ "memo":"Setting the preapproval for this month",
+ "pinType":"NOT_REQUIRED",
+ "returnUrl":"http://app.apigee.com/handle_paypal_return.html",
+ "cancelUrl":"http://app.apigee.com/handle_paypal_cancel.html",
  "ipnNotificationUrl":"http://app.apigee.com/handle_paypal_ipn.html",
-
- "clientDetails" : { "ipAddress" : "127.0.0.1",
+ "clientDetails":{ "ipAddress" : "127.0.0.1",
                      "deviceId" : "platformSDKSample",
                      "applicationId" : "APP-80W284485P519543T"
 						 },
- "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+ "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 				]]></apigee:payload>
 					</representation>
@@ -116,8 +111,8 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
- "preapprovalKey" : "PA-11B737485G431220H",
- "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+ "preapprovalKey":"PA-11B737485G431220H",
+ "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 				]]></apigee:payload>
 					</representation>
@@ -138,8 +133,8 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
- "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"},
- "preapprovalKey" : "PA-11B737485G431220H"
+ "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"},
+ "preapprovalKey":"PA-11B737485G431220H"
 }
 				]]></apigee:payload>
 					</representation>
@@ -161,9 +156,9 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
- "baseAmountList" : { "currency" : {"code":"USD", "amount":"1.00"} },
- "convertToCurrencyList" : { "currencyCode":["CAD", "USD"] },
- "requestEnvelope" : { "errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+ "baseAmountList":{ "currency" : {"code":"USD", "amount":"1.00"} },
+ "convertToCurrencyList":{"currencyCode":["CAD", "USD"] },
+ "requestEnvelope":{ "errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 				]]></apigee:payload>
 					</representation>
@@ -185,11 +180,9 @@
 						<apigee:payload><![CDATA[
 {
  "payKey" : "AP-9JK61721EP167721B",
- "receiverList" : {
-                    "receiver" : [{ "amount":"1.0", "email" : "seller_1288085303_biz@gmail.com" }]
-                  },
- "currencyCode" : "USD",
- "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+ "receiverList":{"receiver" : [{ "amount":"1.0", "email" : "seller_1288085303_biz@gmail.com" }]},
+ "currencyCode":"USD",
+ "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 				]]></apigee:payload>
 					</representation>
@@ -209,8 +202,8 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
- "payKey" : "AP-9JK61721EP167721B",
- "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+ "payKey":"AP-9JK61721EP167721B",
+ "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 				]]></apigee:payload>
 					</representation>
@@ -233,8 +226,8 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
- "payKey" : "AP-9JK61721EP167721B",
- "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+ "payKey":"AP-9JK61721EP167721B",
+ "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 				]]></apigee:payload>
 					</representation>
@@ -257,8 +250,8 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
- "payKey" : "AP-9JK61721EP167721B",
- "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+ "payKey":"AP-9JK61721EP167721B",
+ "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 				]]></apigee:payload>
 					</representation>
@@ -280,8 +273,8 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
- "key" : "AP-9JK61721EP167721B",
- "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+ "key":"AP-9JK61721EP167721B",
+ "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 				]]></apigee:payload>
 					</representation>
@@ -302,8 +295,8 @@
 					<representation>
 						<apigee:payload><![CDATA[
 {
- "payKey" : "AP-9JK61721EP167721B",
- "requestEnvelope" : {"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
+ "payKey":"AP-9JK61721EP167721B",
+ "requestEnvelope":{"errorLanguage":"en_US", "detailLevel":"ReturnAll"}
 }
 				]]></apigee:payload>
 					</representation>
