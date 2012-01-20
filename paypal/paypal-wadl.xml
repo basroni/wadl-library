@@ -5,6 +5,7 @@
 	xsi:schemaLocation="http://wadl.dev.java.net/2009/02 http://apigee.com/schemas/wadl-schema.xsd http://api.apigee.com/wadl/2010/07/ http://apigee.com/schemas/apigee-wadl-extensions.xsd">
 
 	<resources base="https://svcs.sandbox.paypal.com">
+	
 		<resource path="/AdaptivePayments/Pay">
 			<!-- <param name="format" type="xsd:string" style="template" required="false" 
 				default="json"> <option value="json" mediaType="application/json"/> </param> -->
@@ -65,15 +66,15 @@
 				<apigee:authentication required="true" />
 				<apigee:example url="/AdaptivePayments/Preapproval" />
 				<doc title="" apigee:url="https://www.x.com/docs/DOC-1419"><![CDATA[Sets up preapprovals, which is an approval to make payments
-					on the sender's behalf. More documentation at https://www.x.com/docs/DOC-1419
+					on the senders behalf. More documentation at https://www.x.com/docs/DOC-1419
 				]]></doc>
 				<request>
 					<representation>
 						<apigee:payload><![CDATA[
 {
  "senderEmail":"buyer_1288085239_per@gmail.com",
- "startingDate":"2011-01-21",
- "endingDate":"2011-10-21",
+ "startingDate":"2013-01-21",
+ "endingDate":"2013-10-21",
  "maxAmountPerPayment":"1.00",
  "maxNumberOfPayments":"10",
  "maxTotalAmountOfAllPayments":"50.00",
@@ -470,6 +471,364 @@ approve the new PayPal account.
 				</request>
 			</method>
 		</resource>
+		
+		
+		
+		<resource path="CreateInvoice">
+            <!--
+                   <param name="format" type="xsd:string" style="template"
+                   required="false" default="json"> <option value="json"
+                   mediaType="application/json"/> </param>
+               -->
+            <method id="CreateInvoice" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Invoicing Service</apigee:tag>
+                    <apigee:tag>Create Invoice</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Invoice/CreateInvoice"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Creates Invoices at PayPal for sending
+				]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+
+{
+  "invoice" : 
+  {
+    "payerEmail" : "inv_1324315342_per@x.com",
+    "merchantEmail" : "apigee_1288087399_biz@gmail.com",
+    "currencyCode" : "USD",
+    "paymentTerms" : "Net30",
+    "itemList":
+	{
+	  "item" : 
+	  [
+		{
+		  "name":"Web Design",
+		  "description":"100 hours work", 
+		  "quantity" : "4", 
+		  "unitPrice" : "50",
+		  "taxName" : "Tax1",
+		  "taxRate" : "8.25"
+		}
+      ]
+    }
+  },
+  
+  "requestEnvelope" : 
+  {
+	"errorLanguage":"en_US"
+  }
+}
+
+                 ]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>
+		
+		
+		<resource path="SendInvoice">
+            <!--
+                   <param name="format" type="xsd:string" style="template"
+                   required="false" default="json"> <option value="json"
+                   mediaType="application/json"/> </param>
+               -->
+            <method id="SendInvoice" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Invoicing Service</apigee:tag>
+                    <apigee:tag>Send Invoice</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Invoice/SendInvoice"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Creates Invoices at PayPal for sending
+				]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+
+{
+  "invoiceID" : "INV2-5H8F-GSGR-Q2WC-NL7J",
+  "requestEnvelope" : {"errorLanguage":"en_US"}
+}
+
+                 ]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>
+
+
+
+ 		<resource path="CreateAndSendInvoice">
+            <!--
+                   <param name="format" type="xsd:string" style="template"
+                   required="false" default="json"> <option value="json"
+                   mediaType="application/json"/> </param>
+               -->
+            <method id="CreateAndSendInvoice" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Invoicing Service</apigee:tag>
+                    <apigee:tag>Create and Send Invoice</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Invoice/CreateAndSendInvoice"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Creates Invoices at PayPal for sending
+				]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+
+{
+  "invoice" : 
+  {
+    "payerEmail" : "inv_1324315342_per@x.com",
+    "merchantEmail" : "apigee_1288087399_biz@gmail.com",
+    "currencyCode" : "USD",
+    "paymentTerms" : "Net30",
+    "itemList":
+	{ 
+	  "item" : 
+	  [
+	    {
+	      "name":"Web Design",
+		  "description":"100 hours work",
+		  "quantity" : "4",
+		  "unitPrice" : "50",
+		  "taxName" : "Tax1",
+		  "taxRate" : "8.25"
+        }
+      ]
+    }
+  },
+  
+  "requestEnvelope" : {"errorLanguage":"en_US"}
+}
+
+                 ]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>
+		
+		
+		<resource path="UpdateInvoice">
+            <!--
+                   <param name="format" type="xsd:string" style="template"
+                   required="false" default="json"> <option value="json"
+                   mediaType="application/json"/> </param>
+               -->
+            <method id="UpdateInvoice" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Invoicing Service</apigee:tag>
+                    <apigee:tag>Update Invoice</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Invoice/UpdateInvoice"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Creates Invoices at PayPal for sending
+				]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+
+{
+  "invoiceID" : "INV2-W579-N87Q-KRL6-NEUA",
+  "invoice" : 
+  {
+    "payerEmail" : "inv_1324315342_per@x.com",
+    "merchantEmail" : "apigee_1288087399_biz@gmail.com",
+    "currencyCode" : "USD",
+    "paymentTerms" : "Net15",
+    "itemList":
+	{ 
+	  "item" : 
+	  [
+	    {
+	      "name":"Android Programming",
+		  "description":"4 hours work",
+		  "quantity" : "4",
+		  "unitPrice" : "100",
+		  "taxName" : "Tax1",
+		  "taxRate" : "8.25"
+        }
+      ]
+    }
+  },
+  
+  "requestEnvelope" : {"errorLanguage":"en_US"}
+}
+
+                 ]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>
+		
+		
+		<resource path="GetInvoiceDetails">
+            <!--
+                   <param name="format" type="xsd:string" style="template"
+                   required="false" default="json"> <option value="json"
+                   mediaType="application/json"/> </param>
+               -->
+            <method id="GetInvoiceDetails" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Invoicing Service</apigee:tag>
+                    <apigee:tag>Get Invoice Details</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Invoice/GetInvoiceDetails"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Creates Invoices at PayPal for sending
+				]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+
+{
+  "invoiceID" : "INV2-BRMC-3E35-NBDX-CMQN",
+  "requestEnvelope" : 
+  {
+    "errorLanguage":"en_US",
+    "detailLevel" : "returnAll"
+  }
+}
+
+                 ]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>
+		
+		<resource path="CancelInvoice">
+            <!--
+                   <param name="format" type="xsd:string" style="template"
+                   required="false" default="json"> <option value="json"
+                   mediaType="application/json"/> </param>
+               -->
+            <method id="CancelInvoice" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Invoicing Service</apigee:tag>
+                    <apigee:tag>Cancel Invoice</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Invoice/CancelInvoice"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Creates Invoices at PayPal for sending
+				]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+
+{
+  "invoiceID" : "INV2-Y3CL-68DX-9ESD-DDAR",
+  "subject" : "cancel invoice",
+  "noteForPayer" : "Please do not pay invoice",
+  "sendCopyToMerchant" : "true",
+  "requestEnvelope" : 
+    {
+      "errorLanguage":"en_US",
+      "detailLevel" : "returnAll" 
+    }
+}
+
+                 ]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>
+		
+			<resource path="MarkInvoiceAsPaid">
+            <!--
+                   <param name="format" type="xsd:string" style="template"
+                   required="false" default="json"> <option value="json"
+                   mediaType="application/json"/> </param>
+               -->
+            <method id="MarkInvoiceAsPaid" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Invoicing Service</apigee:tag>
+                    <apigee:tag>Mark Invoice As Paid</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Invoice/MarkInvoiceAsPaid"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Creates Invoices at PayPal for sending
+				]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+
+{
+  "invoiceID" : "INV2-AHA4-64YX-4HCJ-WALQ",
+  "payment" : 
+  {
+      "method":"PayPal",
+      "note" : "It's been paid",
+      "date" : "2011-12-19T10:23:34.966-08:00"
+  },
+  
+  "requestEnvelope" : 
+  {
+      "errorLanguage":"en_US",
+      "detailLevel" : "returnAll" 
+  }
+}
+
+                 ]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>
+		
+		
+		<resource path="SearchInvoices">
+            <!--
+                   <param name="format" type="xsd:string" style="template"
+                   required="false" default="json"> <option value="json"
+                   mediaType="application/json"/> </param>
+               -->
+            <method id="SearchInvoices" name="POST">
+                <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <apigee:tag primary="true">Invoicing Service</apigee:tag>
+                    <apigee:tag>Search Invoices</apigee:tag>
+                </apigee:tags>
+                <apigee:authentication xmlns:apigee="http://api.apigee.com/wadl/2010/07/" required="true"/>
+                <apigee:example xmlns:apigee="http://api.apigee.com/wadl/2010/07/" url="/Invoice/SearchInvoices"/>
+                <doc xmlns:apigee="http://api.apigee.com/wadl/2010/07/" title=""
+                     apigee:url="https://www.x.com/docs/DOC-1414"><![CDATA[Creates Invoices at PayPal for sending
+				]]></doc>
+                <request xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
+                    <representation>
+                        <apigee:payload><![CDATA[
+						
+{
+  "merchantEmail" : "apigee_1288087399_biz@gmail.com",
+  "parameters" : 
+  {
+	"origin" : "API",
+	"email" : "inv_1324315342_per@x.com" 
+  },
+  
+  "page" : "1",
+  "pageSize" : "10",
+  "requestEnvelope" : 
+  {
+     "errorLanguage":"en_US"
+  }
+}
+
+                 ]]></apigee:payload>
+                    </representation>
+                </request>
+            </method>
+        </resource>
+		
+		
 
 	</resources>
 

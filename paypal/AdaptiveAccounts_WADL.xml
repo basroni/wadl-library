@@ -4,10 +4,10 @@
              xsi:schemaLocation="http://wadl.dev.java.net/2009/02 http://apigee.com/schemas/wadl-schema.xsd http://api.apigee.com/wadl/2010/07/ http://apigee.com/schemas/apigee-wadl-extensions.xsd">
 
 
-    <resources base="https://svcs.sandbox.paypal.com/AdaptiveAccounts/">
+    <resources base="https://svcs.sandbox.paypal.com">
     
         <resource path="CreateAccount">
-            <method id="Pay" name="POST">
+            <method id="CreateAccount" name="POST">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Adaptive Accounts</apigee:tag>
                     <apigee:tag>CreateAccount</apigee:tag>
@@ -44,7 +44,7 @@
         
         
         <resource path="AddBankAccount">
-            <method id="Pay" name="POST">
+            <method id="AddBankAccount" name="POST">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Adaptive Accounts</apigee:tag>
                     <apigee:tag>AddBankAccount</apigee:tag>
@@ -75,7 +75,7 @@
         </resource> 
 
         <resource path="AddPaymentCard">
-            <method id="Pay" name="POST">
+            <method id="AddPaymentCard" name="POST">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Adaptive Accounts</apigee:tag>
                     <apigee:tag>AddPaymentCard</apigee:tag>
@@ -107,7 +107,7 @@ PayPal accounts.]]></doc>
         </resource>  
 
         <resource path="SetFundingSourceConfirmed">
-            <method id="Pay" name="POST">
+            <method id="SetFundingSourceConfirmed" name="POST">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Adaptive Accounts</apigee:tag>
                     <apigee:tag>SetFundingSourceConfirmed</apigee:tag>
@@ -133,7 +133,7 @@ funding sources for PayPal accounts.
         </resource>  
 
         <resource path="GetVerifiedStatus">
-            <method id="Pay" name="POST">
+            <method id="GetVerifiedStatus" name="POST">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Adaptive Accounts</apigee:tag>
                     <apigee:tag>GetVerifiedStatus</apigee:tag>
@@ -160,7 +160,7 @@ funding sources for PayPal accounts.
         </resource>  
 
         <resource path="GetUserAgreement">
-            <method id="Pay" name="POST">
+            <method id="GetUserAgreement" name="POST">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Adaptive Accounts</apigee:tag>
                     <apigee:tag>GetUserAgreement</apigee:tag>
