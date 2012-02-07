@@ -35,19 +35,24 @@
 	        <doc>Get your API key from x.com</doc>
 	      </param>
 
-		  	<param name="zip_code" required="true" type="xsd:string" style="query" default="78759">
-	        <!-- Docs are optional, but recommended. -->
+		  	<param name="postal_code" required="true" type="xsd:string" style="query" default="94031">
+	        
 	        <doc>Specifies the mandatory location to search for store addresses</doc>
 	      </param>
 	
 				<param name="radius" required="true" type="xsd:string" style="query" default="10">
-	        <!-- Docs are optional, but recommended. -->
+	        
 	        <doc>Specifies the mandatory radius to search for store addresses [0..30]</doc>
 	      </param>
 					
 				<param name="merchant_ids" required="false" type="xsd:string" style="query" default="1779,1609">
 	        <!-- Docs are optional, but recommended. -->
 	        <doc>Optional merchant IDs</doc>
+	      </param>
+	
+				<param name="phones" required="false" type="xsd:string" style="query" default="9995551234,5551234567">
+	        <!-- Docs are optional, but recommended. -->
+	        <doc>Optional phone numbers</doc>
 	      </param>
 	
 			</request>
@@ -143,53 +148,14 @@
 	        <doc>Results per page greater than zero. Default 20</doc>
 	      </param>
 			
-				<param name="show" required="false" type="xsd:string" style="query" default="products{product_id,name,description,image_trimmed,upc,isbn,attributes},summary{merchant}">
+				<param name="show" required="false" style="query" type="xsd:string" default="SaleBrandPidEpidPurlMidsSpecDesc">
 					<doc>Controls the fields to display</doc>
 				</param>
 			</request>
       </method>
 
-			<method id="reviews" name="GET" apigee:displayName="Reviews">
-        <!-- Tags are used to organize the list of methods. Primary tag will list the default placement. -->
-        <apigee:tags>
-          <apigee:tag primary="true">Milo Endpoints</apigee:tag>
-          <!--<apigee:tag>StoreAddresses</apigee:tag> -->
-        </apigee:tags>
-
-        <!-- Is authentication required for this method? -->
-        <apigee:authentication required="false" />
-
-        <!-- Example element is used to specify the sample URL to display in the Console's request URL field. -->
-        <apigee:example url="reviews" />
-
-        <!-- The content of the doc element is shown as a tooltip in the Console's method list. -->
-	    <doc title="" apigee:url="http://www.milo.com/api-docs/endpoints.html">
-		  The Store Addresses endpoint returns information about stores in a particular location. You must specify a location 
-		 (see Specifying Location in Requests), and can optionally limit the results to stores from a particular merchant.
-    </doc>
-				<request>
-				<param name="key" required="true" type="xsd:string" style="query" default="5d385058ba1e0f1046d0ff05c5795807">
-	        <!-- Docs are optional, but recommended. -->
-	        <doc>Get your API key from x.com</doc>
-	      </param>
-
-		  	<param name="product_id" required="true" type="xsd:string" style="query" default="1235">
-	        <!-- Docs are optional, but recommended. -->
-	        <doc>Mandatory product ID</doc>
-	      </param>
-	
-					<param name="page" required="false" type="xsd:string" style="query" default="0">
-		        <!-- Docs are optional, but recommended. -->
-		        <doc>Page number (positive integer)</doc>
-		      </param>
-					<param name="per_page" required="false" type="xsd:string" style="query" default="30">
-		        <!-- Docs are optional, but recommended. -->
-		        <doc>Results per page greater than zero. Default 30</doc>
-		      </param>
-	
-			</request>
-      </method>
-     <!--
+		
+     
 			<method id="availability" name="GET" apigee:displayName="Availability">
         <apigee:tags>
           <apigee:tag primary="true">Milo Endpoints</apigee:tag>
@@ -208,18 +174,21 @@
 	       <doc>Get your API key from x.com</doc>
 	      </param>
 
-		  	<param name="product_id" required="true" type="xsd:string" style="query" default="1235">
+		  	<param name="product_id" required="true" type="xsd:string" style="query" default="9418020">
 	        <doc>Mandatory product ID</doc>
 	      </param>
 					
-					<param name="zip_code" required="true" type="xsd:string" style="query" default="78759">
+					<param name="postal_code" required="true" type="xsd:string" style="query" default="94587">
 		        <doc>Specifies the mandatory location to search for store addresses</doc>
 		      </param>
 		
+					<param name="callback" required="true" type="xsd:string" style="query" default="showCallback">
+		        <doc>Callback function</doc>
+		      </param>
 	
 			</request>
       </method>
-			-->
+			
     </resource>
 
     
