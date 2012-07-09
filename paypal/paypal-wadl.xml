@@ -7,8 +7,6 @@
 	<resources base="https://svcs.sandbox.paypal.com">
 	
 		<resource path="/AdaptivePayments/Pay">
-			<!-- <param name="format" type="xsd:string" style="template" required="false" 
-				default="json"> <option value="json" mediaType="application/json"/> </param> -->
 			<method id="Pay" name="POST" apigee:displayName="Pay">
 				<apigee:tags>
 					<apigee:tag primary="true">Adaptive Payments</apigee:tag>
@@ -488,7 +486,7 @@
 		
 		
 		<resource path="/Invoice/CreateInvoice">
-            <method id="CreateInvoice" name="POST">
+            <method id="CreateInvoice" name="POST" apigee:displayName="CreateInvoice">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Invoicing Service</apigee:tag>
                     <apigee:tag>Create Invoice</apigee:tag>
@@ -540,12 +538,7 @@
 		
 		
 		<resource path="/Invoice/SendInvoice">
-            <!--
-                   <param name="format" type="xsd:string" style="template"
-                   required="false" default="json"> <option value="json"
-                   mediaType="application/json"/> </param>
-               -->
-            <method id="SendInvoice" name="POST">
+            <method id="SendInvoice" name="POST" apigee:displayName="SendInvoice">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Invoicing Service</apigee:tag>
                     <apigee:tag>Send Invoice</apigee:tag>
@@ -575,7 +568,7 @@
 
  		<resource path="/Invoice/CreateAndSendInvoice">
       
-            <method id="CreateAndSendInvoice" name="POST">
+            <method id="CreateAndSendInvoice" name="POST" apigee:displayName="CreateAndSendInvoice">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Invoicing Service</apigee:tag>
                     <apigee:tag>Create and Send Invoice</apigee:tag>
@@ -625,7 +618,7 @@
 		
 		<resource path="/Invoice/UpdateInvoice">
    
-            <method id="UpdateInvoice" name="POST">
+            <method id="UpdateInvoice" name="POST" apigee:displayName="UpdateInvoice">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Invoicing Service</apigee:tag>
                     <apigee:tag>Update Invoice</apigee:tag>
@@ -676,7 +669,7 @@
 		
 		<resource path="/Invoice/GetInvoiceDetails">
        
-            <method id="GetInvoiceDetails" name="POST">
+            <method id="GetInvoiceDetails" name="POST" apigee:displayName="GetInvoiceDetails">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Invoicing Service</apigee:tag>
                     <apigee:tag>Get Invoice Details</apigee:tag>
@@ -708,7 +701,7 @@
 		
 		<resource path="/Invoice/CancelInvoice">
     
-            <method id="CancelInvoice" name="POST">
+            <method id="CancelInvoice" name="POST" apigee:displayName="CancelInvoice">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Invoicing Service</apigee:tag>
                     <apigee:tag>Cancel Invoice</apigee:tag>
@@ -743,7 +736,7 @@
 		
 			<resource path="/Invoice/MarkInvoiceAsPaid">
          
-            <method id="MarkInvoiceAsPaid" name="POST">
+            <method id="MarkInvoiceAsPaid" name="POST" apigee:displayName="MarkInvoiceAsPaid">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Invoicing Service</apigee:tag>
                     <apigee:tag>Mark Invoice As Paid</apigee:tag>
@@ -783,7 +776,7 @@
 		
 		<resource path="/Invoice/SearchInvoices">
         
-            <method id="SearchInvoices" name="POST">
+            <method id="SearchInvoices" name="POST" apigee:displayName="SearchInvoices">
                 <apigee:tags xmlns:apigee="http://api.apigee.com/wadl/2010/07/">
                     <apigee:tag primary="true">Invoicing Service</apigee:tag>
                     <apigee:tag>Search Invoices</apigee:tag>
